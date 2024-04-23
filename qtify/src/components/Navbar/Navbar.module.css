@@ -1,11 +1,12 @@
 .navbar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: 1px solid;
 }
 
-.appBar {
-    /* padding: 1rem; */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
 }
