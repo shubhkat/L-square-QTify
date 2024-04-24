@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 600px) {
-    .feedbackButton {
+    .button {
         width: 75px;
         height: 40px;
     }
