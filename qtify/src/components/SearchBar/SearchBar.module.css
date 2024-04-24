@@ -5,7 +5,7 @@
     justify-content: left;
     align-items: center;
     background: var(--color-white);
-    width: 40%;
+    width: 35%;
     max-height: 48px;
     border-radius: 8px;
     border: 1px;
@@ -19,19 +19,24 @@
     letter-spacing: 0.2px;
     text-align: left;
     text-wrap: wrap;
-    width: 80%;
+    width: 85%;
     border-radius: 8px;
     border: 1px;
 }
 
 .searchButton {
-    width: 20%
+    width: 15%;
+}
+
+.searchIcon {
+    padding: 0;
 }
 
 @media (min-width: 450px) and (max-width: 533px) {
     .form {
         height: 40px;
         min-width: 55%;
+        max-width: 80%;
     }
 
     .searchbar {
