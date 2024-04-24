@@ -1,0 +1,59 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    background: var(--color-white);
+    width: 40%;
+    max-height: 48px;
+    border-radius: 8px;
+    border: 1px;
+}
+
+.searchbar {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    text-wrap: wrap;
+    width: 80%;
+    border-radius: 8px;
+    border: 1px;
+}
+
+.searchButton {
+    width: 20%
+}
+
+@media (min-width: 450px) and (max-width: 533px) {
+    .form {
+        height: 40px;
+        min-width: 55%;
+    }
+
+    .searchbar {
+        min-width: 50px;
+    }
+
+    .searchIcon {
+        padding: 0;
+    }
+}
+
+@media (max-width: 449px) {
+    .form {
+        height: 40px;
+        min-width: 55%;
+    }
+
+    .searchbar {
+        min-width: 50px;
+    }
+
+    .searchIcon {
+        max-width: 15px;
+    }
+}

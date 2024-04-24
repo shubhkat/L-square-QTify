@@ -18,3 +18,19 @@
     letter-spacing: 0.25px;
     text-transform: none;
 }
+
+@media (max-width: 600px) {
+    .feedbackButton {
+        width: 75px;
+        height: 40px;
+    }
+    .buttonName {
+        width: 70px;
+        height: 27px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 14px;
+        letter-spacing: 0.25px;
+        text-transform: none;        
+    }
+}

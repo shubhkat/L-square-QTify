@@ -6,6 +6,7 @@ import { Link } from "@mui/material";
 import styles from "./Navbar.module.css"
 import FeedbackButton from "../FeedbackButton/FeedbackButton";
 import Logo from "../Logo/Logo";
+import SearchBar from "../SearchBar/SearchBar"
 
 function Navbar() {
   return (
@@ -15,7 +16,7 @@ function Navbar() {
           <Link to="/">
             <Logo />
           </Link>
-          {/* <SearchBar /> */}
+          <SearchBar />
           <FeedbackButton />
         </Toolbar>
       </AppBar>
