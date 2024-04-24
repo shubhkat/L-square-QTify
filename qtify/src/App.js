@@ -2,6 +2,7 @@ import React from "react";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
 
 const palette = {
   primary: {
@@ -37,6 +38,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Navbar />
+        <Hero />
       </ThemeProvider>
     </StyledEngineProvider>
   );
