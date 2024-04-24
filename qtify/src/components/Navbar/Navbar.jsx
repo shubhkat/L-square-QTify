@@ -4,11 +4,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { Link } from "@mui/material";
 import styles from "./Navbar.module.css"
-import FeedbackButton from "../FeedbackButton/FeedbackButton";
+import ReusableButton from "../Button/Button";
 import Logo from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar"
 
 function Navbar() {
+  const buttonName = "Give Feedback"; 
   return (
     <Box sx={{ flexGrow: 1 }} className={styles.navbar}>
       <AppBar position="static" className={styles.appbar}>
@@ -17,7 +18,7 @@ function Navbar() {
             <Logo />
           </Link>
           <SearchBar />
-          <FeedbackButton />
+          <ReusableButton buttonName={buttonName}/>
         </Toolbar>
       </AppBar>
     </Box>

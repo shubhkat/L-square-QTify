@@ -10,8 +10,8 @@ function SearchBar() {
         id={styles.searchbar}
         className={styles.searchbar}
         variant="outlined"
-        placeholder="Search a album of your choice"
-        aria-placeholder="Search a album of your choice"
+        placeholder="Search a song of your choice"
+        aria-placeholder="Search a song of your choice"
         size="small"
       />
       <IconButton
