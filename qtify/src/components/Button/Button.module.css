@@ -6,10 +6,10 @@
     border-radius: 12px;
     border: 1px;
     gap: 10px;
+    color: var(--color-primary);
 }
 
 .buttonName {
-    color: var(--color-primary);
     width: 138px;
     height: 27px;
     font-size: 18px;
