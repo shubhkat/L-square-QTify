@@ -9,13 +9,13 @@ const HomePage = () => {
 
   const getTopAlbumsData = async () => {
     const data = await fetchTopAlbumsData();
-    console.log("HomePage.jsx HomePage getTopAlbumsData debug data: ", data);
+    // console.log("HomePage.jsx HomePage getTopAlbumsData debug data: ", data);
     setTopData(data);
   }
 
   const getNewAlbumsData = async () => {
     const data = await fetchNewAlbumsData();
-    console.log("HomePage.jsx HomePage getNewAlbumsData debug data: ", data);
+    // console.log("HomePage.jsx HomePage getNewAlbumsData debug data: ", data);
     setNewData(data);
   }
 

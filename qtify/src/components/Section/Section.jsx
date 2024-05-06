@@ -6,7 +6,7 @@ import styles from "./Section.module.css";
 import { useTheme } from "@emotion/react";
 
 function Section({ name, data }) {
-  console.log("Section.jsx Section debug [name, data]: ", [name, data]);
+  // console.log("Section.jsx Section debug [name, data]: ", [name, data]);
   const theme = useTheme();
   const [collapsed, setCollapsed] = useState(false);
 

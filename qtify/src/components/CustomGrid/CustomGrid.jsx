@@ -4,7 +4,7 @@ import Cards from "../Cards/Cards";
 import styles from "./CustomGrid.module.css";
 
 const CustomGrid = ({ data }) => {
-  console.log("CustomGrid.jsx CustomGrid debug data: ", data);
+  // console.log("CustomGrid.jsx CustomGrid debug data: ", data);
   return (
     <>
       <Grid
