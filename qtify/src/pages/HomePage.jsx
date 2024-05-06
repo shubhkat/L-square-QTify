@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      {!!topData && <Section name="Top Albums" data={topData}/>}
+      <Section name="Top Albums" data={topData}/>
     </>
   );
 }

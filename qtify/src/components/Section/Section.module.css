@@ -1,9 +1,9 @@
 .section {
-    margin-top: 3rem;
+    margin: 3rem;
+    gap: 32px;    
 }
 
 .sectionName {
-    margin-left: 1rem;
     font-family: Poppins;
     font-size: 20px;
     font-weight: 600;
