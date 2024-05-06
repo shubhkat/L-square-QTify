@@ -1,6 +1,7 @@
 import React from "react";
 import { FormControl, IconButton, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
+import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg"
 import styles from "./SearchBar.module.css";
 
 function SearchBar() {
@@ -25,4 +26,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default React.memo(SearchBar);

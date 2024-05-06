@@ -1,8 +1,8 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
 
 const palette = {
   primary: {
@@ -30,7 +30,7 @@ const theme = createTheme({
     fontFamily: [
       "Poppins"
     ].join(','),
-  }
+  },
 });
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Hero />
+        <Outlet context={{  }}/>
       </ThemeProvider>
     </StyledEngineProvider>
   );

@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import styles from "./Hero.module.css";
 import React from "react";
 import heroImg from "../../assets/hero_headphones.png";
+import Image from "../Image/Image"
 
 function Hero() {
   return (
@@ -14,14 +15,9 @@ function Hero() {
           Over thousands podcast episodes
         </Typography>
       </Box>
-      <Box
-        component="img"
-        src={heroImg}
-        alt="qtify-logo"
-        className={styles.img}
-      ></Box>
+      <Image src={heroImg} alt="qtify-logo" imageStyle={styles.img}/>
     </Box>
   );
 }
 
-export default Hero;
+export default React.memo(Hero);

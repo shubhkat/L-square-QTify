@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import styles from "./Button.module.css";
+import styles from "./ReusableButton.module.css";
 import { Typography } from "@mui/material";
 
 function ReusableButton(props) {
@@ -16,4 +16,4 @@ function ReusableButton(props) {
   );
 }
 
-export default ReusableButton;
+export default React.memo(ReusableButton);
