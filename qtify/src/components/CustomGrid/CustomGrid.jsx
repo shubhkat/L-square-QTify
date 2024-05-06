@@ -13,7 +13,7 @@ const CustomGrid = ({ data }) => {
         className={styles.grid}
       >
         {data?.map((album) => (
-          <Grid key={album.id} item xs={12} sm={4} md={3} lg={2} xl={2}>
+          <Grid key={album.id} item xs={12} sm={4} md={3} lg={2} xl={1.5}>
             <Cards data={album} />
           </Grid>
         ))}
