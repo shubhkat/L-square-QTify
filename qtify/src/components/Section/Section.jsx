@@ -34,7 +34,7 @@ function Section({ name, data }) {
           variant="h6"
           className={styles.collapseBar}
         >
-          {!collapsed ? "Collapse" : "Show all"}
+          { collapsed ? "Collapse" : "Show all"}
         </Typography>
       </Stack>
       {data.length === 0 ? (
