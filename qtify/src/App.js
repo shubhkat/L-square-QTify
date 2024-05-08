@@ -1,8 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { StyledEngineProvider } from "@mui/material/styles";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import Navbar from "./components/Navbar/Navbar";
+import { fetchData } from "./services/Services";
+import { useState, useEffect } from "react";
 
 const palette = {
   primary: {
@@ -34,14 +35,36 @@ const theme = createTheme({
 });
 
 function App() {
+
+  const [data, setData] = useState({});
+
+  const getData = async (key, source) => {
+    let resource = "";
+    if (key === "topAlbums") {
+      resource = "albums/top"
+    } else if (key === "newAlbums") {
+      resource = "albums/new"
+    }
+    const fetchedData = await source(resource);
+    // console.log("App.jsx App getData debug fetchedData: ", fetchedData);
+    setData((prevState) => { return { ...prevState, [key]: fetchedData }});
+  }
+
+  useEffect(() => {
+    getData("topAlbums", fetchData);
+    getData("newAlbums", fetchData);
+  }, []);
+  
+  const {topAlbums = [], newAlbums = []} = data;
+
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Outlet context={{  }}/>
+        <Outlet context={{ data: { topAlbums, newAlbums } }}/>
       </ThemeProvider>
     </StyledEngineProvider>
   );
 }
 
-export default App;
+export default React.memo(App);

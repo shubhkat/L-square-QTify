@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import CustomGrid from "../CustomGrid/CustomGrid";
-import { Box, Stack, Typography } from "@mui/material";
-import Collapse from "@mui/material/Collapse";
+import {
+  Box,
+  Stack,
+  Typography,
+  CircularProgress,
+} from "@mui/material";
 import styles from "./Section.module.css";
 import { useTheme } from "@emotion/react";
 
@@ -33,9 +37,16 @@ function Section({ name, data }) {
           {!collapsed ? "Collapse" : "Show all"}
         </Typography>
       </Stack>
-      <Collapse in={!collapsed} timeout="auto" unmountOnExit>
-        <CustomGrid data={data} />
-      </Collapse>
+      {data.length === 0 ? (
+        <Stack direction="row" justifyContent="center" marginBlock={25}>
+          <CircularProgress
+            size={75}
+            sx={{ color: theme.palette.primary["Primary 400"] }}
+          />
+        </Stack>
+      ) : (
+        <CustomGrid data={data} collapsed={collapsed} />
+      )}
     </Box>
   );
 }

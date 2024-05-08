@@ -1,30 +1,16 @@
 import axios from "axios";
+export const BACKEND_ENDPOINT = "https://qtify-backend-labs.crio.do";
 
-const topAlbumsURL = "https://qtify-backend-labs.crio.do/albums/top";
-const newAlbumsURL = "https://qtify-backend-labs.crio.do/albums/new";
-
-const fetchTopAlbumsData = async () => {
+const fetchData = async (resource) => {
   try {
-    const response = await axios.get(topAlbumsURL);
+    const response = await axios.get(`${BACKEND_ENDPOINT}/${resource}`);
     const data = response.data;
-    // console.log("Services.jsx getTopAlbums debug data: ", data);
+    // console.log("Services.jsx fetchData debug data: ", data);
     return data;
   } catch (error) {
-    // console.error("Error fetching top albums data:", error);
+    console.error("Error fetching data:", error);
     return []; // Return an empty array in case of an error
   }
 };
 
-const fetchNewAlbumsData = async () => {
-  try {
-    const response = await axios.get(newAlbumsURL);
-    const data = response.data;
-    // console.log("Services.jsx getNewAlbums debug data: ", data);
-    return data;
-  } catch (error) {
-    console.error("Error fetching new albums data:", error);
-    return []; // Return an empty array in case of an error
-  }
-};
-
-export { fetchTopAlbumsData, fetchNewAlbumsData };
+export { fetchData };

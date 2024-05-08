@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import HomePage from "./pages/HomePage"
-import AlbumPage from "./pages/AlbumPage"
+import HomePage from "./pages/HomePage/HomePage"
+import AlbumPage from "./pages/AlbumPage/AlbumPage"
 
 const router = createBrowserRouter ([
   {
