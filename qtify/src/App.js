@@ -41,9 +41,13 @@ function App() {
   const getData = async (key, source) => {
     let resource = "";
     if (key === "topAlbums") {
-      resource = "albums/top"
+      resource = "albums/top";
     } else if (key === "newAlbums") {
-      resource = "albums/new"
+      resource = "albums/new";
+    } else if (key === "songs") {
+      resource = "songs";
+    } else if (key === "genres") {
+      resource = "genres";
     }
     const fetchedData = await source(resource);
     // console.log("App.jsx App getData debug fetchedData: ", fetchedData);
@@ -51,17 +55,21 @@ function App() {
   }
 
   useEffect(() => {
-    getData("topAlbums", fetchData);
-    getData("newAlbums", fetchData);
+    return () => {
+      getData("topAlbums", fetchData);
+      getData("newAlbums", fetchData);
+      getData("songs", fetchData);
+      getData("genres", fetchData);
+    }
   }, []);
   
-  const {topAlbums = [], newAlbums = []} = data;
+  const {topAlbums = [], newAlbums = [], songs = [], genres = []} = data;
 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Outlet context={{ data: { topAlbums, newAlbums } }}/>
+        <Outlet context={{ data: { topAlbums, newAlbums, songs, genres } }}/>
       </ThemeProvider>
     </StyledEngineProvider>
   );

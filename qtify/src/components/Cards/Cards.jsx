@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import styles from "./Cards.module.css";
 
-function Cards({ data }) {
+function Cards({ data, tabData }) {
   return (
     <Card className={styles.card}>
       <Box className={styles.innerCard}>
@@ -23,9 +23,15 @@ function Cards({ data }) {
             className={styles.img}
           />
         </CardActionArea>
+        { !tabData ? (
         <CardActions className={styles.chipContainer}>
           <Chip label={`${data.follows?data.follows:100} Follows`} className={styles.chips}/>
         </CardActions>
+        ) : (
+        <CardActions className={styles.chipContainer}>
+          <Chip label={`${data.likes?data.likes:100} Likes`} className={styles.chips}/>
+        </CardActions>
+        ) }
       </Box>
       <CardContent>
         <Typography gutterBottom variant="h6" component="div" className={styles.name}>

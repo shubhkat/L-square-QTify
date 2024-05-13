@@ -7,9 +7,9 @@ import styles from "./HomePage.module.css";
 
 const HomePage = () => {
   const props = useOutletContext();
-  const { topAlbums, newAlbums } = props.data;
+  const { topAlbums, newAlbums, songs, genres } = props.data;
   // console.log("HomePage.jsx HomePage props.data: ", props.data);
-  // console.log("HomePage.jsx HomePage { topAlbums, newAlbums }: ", { topAlbums, newAlbums });
+  // console.log("HomePage.jsx HomePage { topAlbums, newAlbums, songs, genres }: ", { topAlbums, newAlbums, songs, genres });
 
   return (
     <>
@@ -17,6 +17,7 @@ const HomePage = () => {
       <Box className={styles.wrapper}>
         <Section name="Top Albums" data={topAlbums} />
         <Section name="New Albums" data={newAlbums} />
+        <Section name="Songs" data={songs} tabData={genres} />
       </Box>
     </>
   );

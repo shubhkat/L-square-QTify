@@ -4,7 +4,7 @@ import Cards from "../Cards/Cards";
 import styles from "./CustomGrid.module.css";
 import Carousel from "../Carousel/Carousel";
 
-const CustomGrid = ({ data, collapsed }) => {
+const CustomGrid = ({ data, collapsed, tabData }) => {
 
   // console.log("CustomGrid.jsx CustomGrid debug data: ", data);
   // console.log("CustomGrid.jsx CustomGrid debug collapsed: ", collapsed);
@@ -23,7 +23,7 @@ const CustomGrid = ({ data, collapsed }) => {
         </Grid>
       ))}
       </Grid>) : (
-        <Carousel data={data} />
+        <Carousel data={data} tabData={tabData}/>
       )}
     </>
   );

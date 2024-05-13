@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 
-const Carousel = ({ data }) => {
+const Carousel = ({ data, tabData }) => {
   //   console.log("Carousel.jsx Carousel debug data:: ", data);
 
   return (
@@ -42,8 +42,8 @@ const Carousel = ({ data }) => {
       {/* </Box> */}
       {/* <Box className={styles.cardWrapper}> */}
         {data?.map((album) => (
-          <SwiperSlide key={album.id}>
-            <Cards data={album} />
+          <SwiperSlide>
+            <Cards data={album} tabData={tabData} key={album.id} />
           </SwiperSlide>
         ))}
       {/* </Box> */}

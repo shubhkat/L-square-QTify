@@ -14,3 +14,7 @@
     padding-bottom: 15px;
     cursor: pointer;
 }
+
+.label > .Mui-selected {
+    color: #1890ff,
+}

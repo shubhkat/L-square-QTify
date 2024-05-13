@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import CustomGrid from "../CustomGrid/CustomGrid";
-import {
-  Box,
-  Stack,
-  Typography,
-  CircularProgress,
-} from "@mui/material";
+import { Box, Stack, Typography, CircularProgress } from "@mui/material";
 import styles from "./Section.module.css";
 import { useTheme } from "@emotion/react";
+import SongsTabs from "./SongsTabs";
 
-function Section({ name, data }) {
-  // console.log("Section.jsx Section debug [name, data]: ", [name, data]);
+function Section({ name, data, tabData }) {
+  // console.log("Section.jsx Section debug [name, data, tabData]: ", [ name, data, tabData, ]);
   const theme = useTheme();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const handleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -28,14 +24,16 @@ function Section({ name, data }) {
         >
           {name}
         </Typography>
-        <Typography
-          onClick={handleCollapsed}
-          color={theme.palette.primary["Primary 400"]}
-          variant="h6"
-          className={styles.collapseBar}
-        >
-          { collapsed ? "Collapse" : "Show all"}
-        </Typography>
+        {!tabData && (
+          <Typography
+            onClick={handleCollapsed}
+            color={theme.palette.primary["Primary 400"]}
+            variant="h6"
+            className={styles.collapseBar}
+          >
+            {!collapsed ? "Collapse" : "Show all"}
+          </Typography>
+        )}
       </Stack>
       {data.length === 0 ? (
         <Stack direction="row" justifyContent="center" marginBlock={25}>
@@ -45,7 +43,13 @@ function Section({ name, data }) {
           />
         </Stack>
       ) : (
-        <CustomGrid data={data} collapsed={collapsed} />
+        <>
+          {!tabData ? (
+            <CustomGrid data={data} collapsed={collapsed} />
+          ) : (
+            <SongsTabs data={data} tabData={tabData.data} />
+          )}
+        </>
       )}
     </Box>
   );
