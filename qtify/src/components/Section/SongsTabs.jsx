@@ -82,35 +82,33 @@ const SongsTabs = ({ data, tabData }) => {
             className={styles.label}
             key={genre}
           />
-          {!!tabData.length &&
-            tabData.map((item, index) => (
-              <CustomTab
-                label={item.label}
-                {...a11yProps(index + 1)}
-                sx={{
-                  color: theme.palette.main,
-                  fontFamily: theme.typography.fontFamily,
-                  fontSize: "16px",
-                  fontWeight: "600",
-                  lineHeight: "24px",
-                  textAlign: "left",
-                  textTransform: "none",
-                }}
-                className={styles.label}
-                key={item.key}
-              />
-            ))}
+          {tabData.map((item, index) => (
+            <CustomTab
+              label={item.label}
+              {...a11yProps(index + 1)}
+              sx={{
+                color: theme.palette.main,
+                fontFamily: theme.typography.fontFamily,
+                fontSize: "16px",
+                fontWeight: "600",
+                lineHeight: "24px",
+                textAlign: "left",
+                textTransform: "none",
+              }}
+              className={styles.label}
+              key={item.key}
+            />
+          ))}
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0} key={genre}>
         <Carousel data={data} tabData={tabData} />
       </CustomTabPanel>
-      {!!tabData.length &&
-        tabData.map((item, index) => (
-          <CustomTabPanel value={value} index={index + 1} key={item.key}>
-            <Carousel data={filter(data, item)} tabData={tabData} />
-          </CustomTabPanel>
-        ))}
+      {tabData.map((item, index) => (
+        <CustomTabPanel value={value} index={index + 1} key={item.key}>
+          <Carousel data={filter(data, item)} tabData={tabData} />
+        </CustomTabPanel>
+      ))}
     </>
   );
 };

@@ -1,13 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { createTheme, ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import {
+  createTheme,
+  ThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
 import Navbar from "./components/Navbar/Navbar";
 import { fetchData } from "./services/Services";
 import { useState, useEffect } from "react";
 
 const palette = {
   primary: {
-    "main": "#34C94B",
+    main: "#34C94B",
     "Primary 900": "#006A08",
     "Primary 800": "#00890D",
     "Primary 700": "#009B13",
@@ -20,22 +24,19 @@ const palette = {
     "Primary 50": "#E5F7E6",
   },
   secondary: {
-    "main": "#121212",
+    main: "#121212",
   },
-  "main": "#ffffff",
-}
+  main: "#ffffff",
+};
 
 const theme = createTheme({
   palette,
   typography: {
-    fontFamily: [
-      "Poppins"
-    ].join(','),
+    fontFamily: ["Poppins"].join(","),
   },
 });
 
 function App() {
-
   const [data, setData] = useState({});
 
   const getData = async (key, source) => {
@@ -51,25 +52,25 @@ function App() {
     }
     const fetchedData = await source(resource);
     // console.log("App.jsx App getData debug fetchedData: ", fetchedData);
-    setData((prevState) => { return { ...prevState, [key]: fetchedData }});
-  }
+    setData((prevState) => {
+      return { ...prevState, [key]: fetchedData };
+    });
+  };
 
   useEffect(() => {
-    return () => {
-      getData("topAlbums", fetchData);
-      getData("newAlbums", fetchData);
-      getData("songs", fetchData);
-      getData("genres", fetchData);
-    }
+    getData("topAlbums", fetchData);
+    getData("newAlbums", fetchData);
+    getData("songs", fetchData);
+    getData("genres", fetchData);
   }, []);
-  
-  const {topAlbums = [], newAlbums = [], songs = [], genres = []} = data;
+
+  const { topAlbums = [], newAlbums = [], songs = [], genres = [] } = data;
 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Outlet context={{ data: { topAlbums, newAlbums, songs, genres } }}/>
+        <Outlet context={{ data: { topAlbums, newAlbums, songs, genres } }} />
       </ThemeProvider>
     </StyledEngineProvider>
   );

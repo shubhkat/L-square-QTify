@@ -42,8 +42,8 @@ const Carousel = ({ data, tabData }) => {
       {/* </Box> */}
       {/* <Box className={styles.cardWrapper}> */}
         {data?.map((album) => (
-          <SwiperSlide>
-            <Cards data={album} tabData={tabData} key={album.id} />
+          <SwiperSlide key={album.id}>
+            <Cards data={album} tabData={tabData} />
           </SwiperSlide>
         ))}
       {/* </Box> */}
