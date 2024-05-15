@@ -8,7 +8,7 @@ import SongsTabs from "./SongsTabs";
 function Section({ name, data, tabData }) {
   // console.log("Section.jsx Section debug [name, data, tabData]: ", [ name, data, tabData, ]);
   const theme = useTheme();
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   const handleCollapsed = () => {
     setCollapsed(!collapsed);
