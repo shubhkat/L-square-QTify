@@ -31,7 +31,7 @@ function Section({ name, data, tabData }) {
             variant="h6"
             className={styles.collapseBar}
           >
-            {!collapsed ? "Collapse" : "Show all"}
+            {collapsed ? "Collapse" : "Show all"}
           </Typography>
         )}
       </Stack>
