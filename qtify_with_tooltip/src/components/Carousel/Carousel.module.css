@@ -1,0 +1,27 @@
+/* .wrapper {
+    color: var(--color-white);
+    margin-block: 5rem;
+    padding-inline: 50%;
+} */
+
+/*.carouselWrapper {
+    width: 100%;
+} */
+
+.prevNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-75%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.nextNav {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-75%);
+    cursor: pointer;
+    z-index: 1;
+}
+

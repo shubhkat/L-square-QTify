@@ -1,0 +1,36 @@
+.button {
+    background: var(--color-secondary);
+    width: 170px;
+    height: 47px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px;
+    gap: 10px;
+    color: var(--color-primary);
+}
+
+.buttonName {
+    width: 138px;
+    height: 27px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.25px;
+    text-transform: none;
+}
+
+@media (max-width: 600px) {
+    .button {
+        width: 75px;
+        height: 40px;
+    }
+    .buttonName {
+        width: 70px;
+        height: 27px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 14px;
+        letter-spacing: 0.25px;
+        text-transform: none;        
+    }
+}
