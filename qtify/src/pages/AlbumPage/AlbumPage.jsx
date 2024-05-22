@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from "./AlbumPage.module.css"
 
 function AlbumPage() {
   return (

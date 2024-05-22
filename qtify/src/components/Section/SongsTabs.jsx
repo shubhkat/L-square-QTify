@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Box, Tabs, Tab, useTheme, styled } from "@mui/material";
 import PropTypes from "prop-types";
